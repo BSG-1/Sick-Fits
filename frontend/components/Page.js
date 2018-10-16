@@ -14,11 +14,21 @@ const theme = {
     bs: '0 12px 24px 0 rgba(0, 0, 0, 0,09)',
 };
 
+const StyledPage = styled.div`
+    background: white;
+    color: black;
+`;
+
+const Inner = styled.div`
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+`;
 class Page extends Component {
     render() {
         return (
             //wrap whole application in React Context API
-            <ThemeProvider>
+            <ThemeProvider theme={theme}>
                 <StyledPage>
                     <Meta />
                     <Header />
