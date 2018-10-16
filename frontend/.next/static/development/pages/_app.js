@@ -274,7 +274,13 @@ function (_Component) {
           lineNumber: 23
         },
         __self: this
-      }), this.props.children);
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Inner, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 24
+        },
+        __self: this
+      }, this.props.children));
     }
   }]);
 
