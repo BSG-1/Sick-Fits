@@ -124,7 +124,7 @@ var Sell = function Sell(props) {
     },
     __self: this
   }, "Selling!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    href: "/index.js",
+    href: "/index",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 6
