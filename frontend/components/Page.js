@@ -20,7 +20,10 @@ const StyledPage = styled.div`
 `;
 
 const Inner = styled.div`
-    max-width: 1000px;
+    /* ES6 interpolation with max-width */
+    max-width: ${props => props.theme.maxWidth};
+    /* ES6 interpolation with background color */
+    background: ${props => props.theme.red};
     margin: 0 auto;
     padding: 2rem;
 `;

@@ -344,7 +344,11 @@ var StyledPage = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.div.wi
 var Inner = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.div.withConfig({
   displayName: "Page__Inner",
   componentId: "sc-4u7a64-1"
-})(["max-width:1000px;margin:0 auto;padding:2rem;"]);
+})(["max-width:", ";background:", ";margin:0 auto;padding:2rem;"], function (props) {
+  return props.theme.maxWidth;
+}, function (props) {
+  return props.theme.red;
+});
 
 var Page =
 /*#__PURE__*/
@@ -365,31 +369,31 @@ function (_Component) {
           theme: theme,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 31
+            lineNumber: 34
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(StyledPage, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 32
+            lineNumber: 35
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Meta__WEBPACK_IMPORTED_MODULE_2__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 33
+            lineNumber: 36
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Header__WEBPACK_IMPORTED_MODULE_1__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 34
+            lineNumber: 37
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Inner, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 35
+            lineNumber: 38
           },
           __self: this
         }, this.props.children)))
