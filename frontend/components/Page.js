@@ -3,17 +3,10 @@ import Header from '../components/Header';
 import Meta from '../components/Meta';
 import styled from 'styled-components';
 
-const StyledPage = styled.div`
-    background: white;
-    color: black;
-`;
+//theme object
+const theme = {
 
-const Inner = styled.div`
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 2rem;
-`;
-
+}
 
 class Page extends Component {
     render() {
