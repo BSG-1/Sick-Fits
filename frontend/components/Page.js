@@ -16,14 +16,12 @@ const theme = {
 
 const StyledPage = styled.div`
     background: white;
-    color: black;
+    color: ${props => props.theme.black};
 `;
 
 const Inner = styled.div`
     /* ES6 interpolation with max-width */
     max-width: ${props => props.theme.maxWidth};
-    /* ES6 interpolation with background color */
-    background: ${props => props.theme.red};
     margin: 0 auto;
     padding: 2rem;
 `;
