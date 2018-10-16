@@ -22,8 +22,12 @@ const Logo = styled.h1`
     }
 `;
 
+const StyledHeader = styled.header`
+ 
+`;
+
 const Header = () => (
-    <div>
+    <StyledHeader>
         <div className="bar">
             <Logo>
                 <Link href="/">
@@ -36,7 +40,7 @@ const Header = () => (
             <p>Search</p>
         </div>
         <div>Cart</div>
-    </div>
+    </StyledHeader>
 );
 
 export default Header;
