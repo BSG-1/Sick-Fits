@@ -16,7 +16,10 @@ const Logo = styled.h1`
         text-decoration: none;
     }
     /* You can do media queries in styled components!!! */
-    @media
+    @media (max-width: 1300px) {
+        margin: 0;
+        text-align: center;
+    }
 `;
 
 const Header = () => (
