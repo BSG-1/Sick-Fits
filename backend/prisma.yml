@@ -1,2 +1,4 @@
 endpoint: ${env:PRISMA_ENDPOINT}
 datamodel: datamodel.prisma
+# uncomment next line BEFORE production
+# secret: ${env:PRISMA_SECRET}
