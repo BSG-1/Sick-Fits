@@ -1,4 +1,4 @@
 //used for changing data
-const mutations = {};
+const Mutations = {};
 
-module.exports = mutations;
+module.exports = Mutations;
