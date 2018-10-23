@@ -1,1 +1,9 @@
 # contains all our queries and resolvers
+
+type Mutation {
+    hi: String
+}
+
+type Query {
+    hi: String
+}
