@@ -1,4 +1,5 @@
 # contains all our queries and resolvers
+# This is our public facing API
 type Dog {
     name: String!
 }
