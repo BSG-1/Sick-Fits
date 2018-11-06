@@ -1,5 +1,6 @@
 # source: https://us1.prisma.sh/bahadur-ghataorhe/sick-fits/dev
 # timestamp: Tue Nov 06 2018 10:53:15 GMT-0800 (PST)
+# This file gets generated based off our datamodel.graphql
 
 type AggregateItem {
   count: Int!
