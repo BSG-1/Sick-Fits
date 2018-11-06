@@ -4,14 +4,15 @@ type User {
   email: String!
 }
 
+# Anytime you change anything in your data-model, you must deploy it to prisma 
 type Item {
   id: ID! @unique
-  title
-  description
-  image
-  largeImage
-  price
-  createdAt
-  updatedAt
-  user
+  title: String!
+  description: String!
+  image: String
+  largeImage: String
+  price: Int!
+  createAt: DateTime!
+  updatedAt: DateTime!
+  # user: User!
 }
