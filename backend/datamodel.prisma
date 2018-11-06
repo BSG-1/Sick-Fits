@@ -3,3 +3,15 @@ type User {
   name: String!
   email: String!
 }
+
+type Item {
+  id: ID! @unique
+  title
+  description
+  image
+  largeImage
+  price
+  createdAt
+  updatedAt
+  user
+}
