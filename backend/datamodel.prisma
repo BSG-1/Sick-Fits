@@ -1,10 +1,11 @@
+# This file is for Prisma and our backend
 type User {
   id: ID! @unique
   name: String!
   email: String!
 }
 
-# Anytime you change anything in your data-model, you must deploy it to prisma 
+# Anytime you change anything in your data-model, you must deploy it to prisma
 type Item {
   id: ID! @unique
   title: String!
