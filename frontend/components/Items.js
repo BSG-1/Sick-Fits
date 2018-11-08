@@ -26,8 +26,8 @@ export default class Items extends Component {
                 <Query query={ALL_ITEMS_QUERY} >
                     {/* the only child of a query must be a function */}
                     {({ data, error, loading }) => {
-                        console.log(payload);
-                        return <p>Hey I'm the child of query</p>
+                        console.log(data);
+                        return <p>I found {data.items.length} items!</p>
                     }}
                 </Query>
             </div>

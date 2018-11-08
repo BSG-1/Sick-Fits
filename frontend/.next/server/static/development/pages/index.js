@@ -184,14 +184,14 @@ function (_Component) {
         var data = _ref.data,
             error = _ref.error,
             loading = _ref.loading;
-        console.log(payload);
+        console.log(data);
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           __source: {
             fileName: _jsxFileName,
             lineNumber: 30
           },
           __self: this
-        }, "Hey I'm the child of query");
+        }, "I found ", data.items.length, " items!");
       }));
     }
   }]);

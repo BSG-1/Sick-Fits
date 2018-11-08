@@ -36,10 +36,23 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n    # name it the same\n    query ALL_ITEMS_QUERY {\n        # remember with graphql you pull in only exactly what you need\n        items {\n            id\n            title\n            price\n            description\n            image\n            largeImage\n        }\n    }\n"]);
 
- //query from graph ql
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 
+
+ //query from graphql
+
+var ALL_ITEMS_QUERY = graphql_tag__WEBPACK_IMPORTED_MODULE_2___default()(_templateObject());
 
 var Items =
 /*#__PURE__*/
@@ -58,16 +71,35 @@ function (_Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 10
+          lineNumber: 24
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 11
+          lineNumber: 25
         },
         __self: this
-      }, "Items!"));
+      }, "Items!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_apollo__WEBPACK_IMPORTED_MODULE_1__["Query"], {
+        query: ALL_ITEMS_QUERY,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 26
+        },
+        __self: this
+      }, function (_ref) {
+        var data = _ref.data,
+            error = _ref.error,
+            loading = _ref.loading;
+        console.log(data);
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 30
+          },
+          __self: this
+        }, "I found ", data.items.length, " items!");
+      }));
     }
   }]);
 
@@ -79,4 +111,4 @@ function (_Component) {
 /***/ })
 
 })
-//# sourceMappingURL=index.js.ce9ec59066133a86a4f3.hot-update.js.map
+//# sourceMappingURL=index.js.fdbb18d467c7c8401510.hot-update.js.map

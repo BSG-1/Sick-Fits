@@ -1,4 +1,4 @@
-webpackHotUpdate("static/development/pages/items.js",{
+webpackHotUpdate("static/development/pages/index.js",{
 
 /***/ "./components/Items.js":
 /*!*****************************!*\
@@ -111,4 +111,4 @@ function (_Component) {
 /***/ })
 
 })
-//# sourceMappingURL=items.js.a8947e21533695a13687.hot-update.js.map
+//# sourceMappingURL=index.js.f69dcc8c847101a3e347.hot-update.js.map

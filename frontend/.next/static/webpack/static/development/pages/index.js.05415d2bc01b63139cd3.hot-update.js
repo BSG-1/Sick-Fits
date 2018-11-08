@@ -1,4 +1,4 @@
-webpackHotUpdate("static/development/pages/items.js",{
+webpackHotUpdate("static/development/pages/index.js",{
 
 /***/ "./components/Items.js":
 /*!*****************************!*\
@@ -37,7 +37,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n    # name it the same\n    query ALL_ITEMS_QUERY\n"]);
+  var data = _taggedTemplateLiteral(["\n    # name it the same\n    query ALL_ITEMS_QUERY {\n        # remember with graphql you pull in only exactly what you need\n        items {\n            id\n            title\n            price\n            description\n            image\n            largeImage\n        }\n    }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -71,16 +71,35 @@ function (_Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 14
+          lineNumber: 24
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 15
+          lineNumber: 25
         },
         __self: this
-      }, "Items!"));
+      }, "Items!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_apollo__WEBPACK_IMPORTED_MODULE_1__["Query"], {
+        query: ALL_ITEMS_QUERY,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 26
+        },
+        __self: this
+      }, function (_ref) {
+        var data = _ref.data,
+            error = _ref.error,
+            loading = _ref.loading;
+        console.log(data);
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 30
+          },
+          __self: this
+        }, "I found ", data.items.length);
+      }));
     }
   }]);
 
@@ -92,4 +111,4 @@ function (_Component) {
 /***/ })
 
 })
-//# sourceMappingURL=items.js.3fc131574df1ea178c6f.hot-update.js.map
+//# sourceMappingURL=index.js.05415d2bc01b63139cd3.hot-update.js.map
