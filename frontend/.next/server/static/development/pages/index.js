@@ -173,7 +173,23 @@ function (_Component) {
           lineNumber: 25
         },
         __self: this
-      }, "Items!"));
+      }, "Items!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_apollo__WEBPACK_IMPORTED_MODULE_1__["Query"], {
+        query: ALL_ITEMS_QUERY,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 26
+        },
+        __self: this
+      }, function (payload) {
+        console.log(payload);
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 30
+          },
+          __self: this
+        }, "Hey I'm the child of query");
+      }));
     }
   }]);
 
