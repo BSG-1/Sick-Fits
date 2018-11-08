@@ -169,7 +169,12 @@ function (_Component) {
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-        href: {},
+        href: {
+          pathname: '/item',
+          query: {
+            id: item.id
+          }
+        },
         __source: {
           fileName: _jsxFileName,
           lineNumber: 18
@@ -178,10 +183,16 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 19
+          lineNumber: 24
         },
         __self: this
-      }, item.title))));
+      }, item.title))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_PriceTag__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 27
+        },
+        __self: this
+      }, item.price));
     }
   }]);
 

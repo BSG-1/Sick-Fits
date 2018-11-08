@@ -15,10 +15,16 @@ export default class Item extends Component {
         return <ItemStyles>
             <Title>
                 {/* two curly braces for passing an object literal in href */}
-                <Link href={{}}>
+                <Link
+                    href={{
+                        pathname: '/item',
+                        query: { id: item.id },
+                    }}
+                >
                     <a>{item.title}</a>
                 </Link>
             </Title>
+            <PriceTag>{item.price}</PriceTag>
         </ItemStyles>
 
     }
