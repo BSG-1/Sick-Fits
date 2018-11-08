@@ -87,7 +87,10 @@ function (_Component) {
           lineNumber: 26
         },
         __self: this
-      }, function (payload) {
+      }, function (_ref) {
+        var data = _ref.data,
+            error = _ref.error,
+            loading = _ref.loading;
         console.log(payload);
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           __source: {
