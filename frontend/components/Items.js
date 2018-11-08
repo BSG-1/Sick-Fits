@@ -44,8 +44,8 @@ export default class Items extends Component {
                         if (error) return <p>Error: {error.message}</p>
                         //console.log(data);
                         return <ItemsList>
-                            {/* NEEDS A KEY PROP */}
-                            {data.items.map(item => <Item item={item}></Item>)}
+                            {/* NEEDS A KEY PROP THAT IS UNIQUE*/}
+                            {data.items.map(item => <Item item={item} key={item.id} />)}
                         </ItemsList>
                     }}
                 </Query>
