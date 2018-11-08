@@ -1,5 +1,5 @@
 import withApollo from 'next-with-apollo';
-import ApolloClient from 'apollo-boost'; //has all of the packages that go with Apollo CLient - caching, http, error, link-state
+import ApolloClient from 'apollo-boost';
 import { endpoint } from '../config';
 
 function createClient({ headers }) {
