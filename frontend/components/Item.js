@@ -14,6 +14,8 @@ export default class Item extends Component {
     render() {
         const { item } = this.props;
         return <ItemStyles>
+            {item.image && <img src={item.image} alt={item.title} />}
+
             <Title>
                 {/* two curly braces for passing an object literal in href */}
                 <Link
@@ -27,7 +29,18 @@ export default class Item extends Component {
             </Title>
             <PriceTag>{formatMoney(item.price)}</PriceTag>
             <p>{item.description}</p>
-            <div className="buttonlist"></div>
+            <div className="buttonlist">
+                <Link
+                    href={{
+                        pathname: "update",
+                        query: { id: item.id }
+                    }}
+                >
+                    <a>Edit ✏️</a>
+                </Link>
+                <button>Add To Cart</button>
+                <button>Delete</button>
+            </div>
         </ItemStyles>
 
     }
