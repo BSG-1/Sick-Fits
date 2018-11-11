@@ -325,7 +325,7 @@ var Center = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.div.withCo
 var ItemsList = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.div.withConfig({
   displayName: "Items__ItemsList",
   componentId: "tikday-1"
-})(["display:grid;grid-template-columns:1fr 1fr;grid-gap:60px;max-width:", ";margin:0 auto;"], function (props) {
+})(["  display:grid;grid-template-columns:1fr 1fr;grid-gap:60px;max-width:", ";margin:0 auto;"], function (props) {
   return props.theme.maxWidth;
 }); //this is a component for fetching the items from graphql/prisma and looping over them, and also for formatting them (above)
 
