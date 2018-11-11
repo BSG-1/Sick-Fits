@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-
-function mapStateToProps(state) {
-    return {
-
-    };
-}
+//allows us to push data and actually make a change
+import { Mutation } from 'react-apollo';
 
 class CreateItem extends Component {
     render() {
@@ -17,6 +12,4 @@ class CreateItem extends Component {
     }
 }
 
-export default connect(
-    mapStateToProps,
-)(CreateItem);
+export default CreateItem;
