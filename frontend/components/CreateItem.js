@@ -14,6 +14,11 @@ class CreateItem extends Component {
         price: 0,
     };
 
+    //wouldnt be able to bind a regular function
+    handleChange = () => {
+        this.setState
+    }
+
     render() {
         return (
             <Form>
@@ -27,6 +32,7 @@ class CreateItem extends Component {
                             placeholder="Title"
                             required
                             value={this.state.title}
+                            onChange={this.handleChange}
                         />
                     </label>
                 </fieldset>

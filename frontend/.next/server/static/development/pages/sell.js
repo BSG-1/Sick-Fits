@@ -165,6 +165,10 @@ function (_Component) {
       price: 0
     });
 
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleChange", function () {
+      _this.setState;
+    });
+
     return _this;
   }
 
@@ -174,20 +178,20 @@ function (_Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_Form__WEBPACK_IMPORTED_MODULE_3__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 19
+          lineNumber: 24
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("fieldset", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 20
+          lineNumber: 25
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         htmlFor: "title",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 21
+          lineNumber: 26
         },
         __self: this
       }, "Title", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
@@ -197,9 +201,10 @@ function (_Component) {
         placeholder: "Title",
         required: true,
         value: this.state.title,
+        onChange: this.handleChange,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 23
+          lineNumber: 28
         },
         __self: this
       }))));
