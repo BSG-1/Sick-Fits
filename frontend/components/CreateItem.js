@@ -24,7 +24,13 @@ class CreateItem extends Component {
 
     render() {
         return (
-            <Form>
+            <Form
+                onsubmit={(e) => {
+                    //stops form from actually submitting; will stop url weirdness
+                    e.preventDefault();
+                    console.log(this.state);
+                }}
+            >
                 <fieldset>
                     <label htmlFor="title">
                         Title
@@ -63,6 +69,7 @@ class CreateItem extends Component {
                             onChange={this.handleChange}
                         />
                     </label>
+                    <button type="submit">Submit</button>
                 </fieldset>
             </Form>
         );

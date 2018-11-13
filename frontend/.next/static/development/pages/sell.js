@@ -88,7 +88,14 @@ function (_Component) {
   _createClass(CreateItem, [{
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_Form__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        onsubmit: function onsubmit(e) {
+          //stops form from actually submitting; will stop url weirdness
+          e.preventDefault();
+          console.log(_this2.state);
+        },
         __source: {
           fileName: _jsxFileName,
           lineNumber: 27
@@ -97,14 +104,14 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("fieldset", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 28
+          lineNumber: 34
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         htmlFor: "title",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 29
+          lineNumber: 35
         },
         __self: this
       }, "Title", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
@@ -117,14 +124,14 @@ function (_Component) {
         onChange: this.handleChange,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 31
+          lineNumber: 37
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         htmlFor: "price",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 42
+          lineNumber: 48
         },
         __self: this
       }, "Price", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
@@ -137,14 +144,14 @@ function (_Component) {
         onChange: this.handleChange,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 44
+          lineNumber: 50
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         htmlFor: "description",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 55
+          lineNumber: 61
         },
         __self: this
       }, "Description", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
@@ -156,10 +163,17 @@ function (_Component) {
         onChange: this.handleChange,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 57
+          lineNumber: 63
         },
         __self: this
-      }))));
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        type: "submit",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 72
+        },
+        __self: this
+      }, "Submit")));
     }
   }]);
 
