@@ -7,7 +7,7 @@ import formatMoney from '../lib/formatMoney';
 
 class CreateItem extends Component {
     state = {
-        title: '',
+        title: 'Cool Shoes',
         description: '',
         image: '',
         largeImage: '',
@@ -15,8 +15,11 @@ class CreateItem extends Component {
     };
 
     //wouldnt be able to bind a regular function
-    handleChange = () => {
-        this.setState
+    handleChange = e => {
+        const { name, type, value } = e.target;
+        const val = type === 'number' ? parseFloat(value) : value;
+        //works for ANY input
+        this.setState({ [name]: val });
     }
 
     render() {
