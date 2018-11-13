@@ -46,6 +46,17 @@ class CreateItem extends Component {
         this.setState({ [name]: val });
     }
 
+    //uploadfile pics
+    async uploadFile = e => {
+        console.log('uploading file...');
+        const files = e.target.files;
+        const data = new FormData();
+        data.append('file', files[0]);
+        //upload preset needed for cloudinary -> tells it name to go look for 
+        data.append('upload_preset', 'sickfits');
+        //hit the cloudinary API
+    };;
+
     render() {
         return (
             // Mutation wraps the entire form tag, exposing data to the query
@@ -67,9 +78,21 @@ class CreateItem extends Component {
                     >
                         <Error error={error} />
                         <fieldset disabled={loading} aria-busy={loading}>
+                            <label htmlFor="file">
+                                Image
+                                <input
+                                    type="file"
+                                    id="file"
+                                    name="file"
+                                    placeholder="Upload an image"
+                                    required
+                                    onChange={this.uploadFile}
+                                />
+                            </label>
+
                             <label htmlFor="title">
                                 Title
-                        <input
+                                <input
                                     type="text"
                                     id="title"
                                     name="title"
@@ -82,7 +105,7 @@ class CreateItem extends Component {
 
                             <label htmlFor="price">
                                 Price
-                        <input
+                                <input
                                     type="number"
                                     id="price"
                                     name="price"
@@ -95,7 +118,7 @@ class CreateItem extends Component {
 
                             <label htmlFor="description">
                                 Description
-                        <textarea
+                                <textarea
                                     id="description"
                                     name="description"
                                     placeholder="Enter A Description"

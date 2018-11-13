@@ -109,6 +109,15 @@ function (_Component) {
       _this.setState(_defineProperty({}, name, val));
     });
 
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "uploadFile", function (e) {
+      console.log('uploading file...');
+      var files = e.target.files;
+      var data = new FormData();
+      data.append('file', files[0]); //upload preset
+
+      data.append('upload_preset', 'sickfits');
+    });
+
     return _this;
   }
 
@@ -123,7 +132,7 @@ function (_Component) {
           variables: this.state,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 52
+            lineNumber: 62
           },
           __self: this
         }, function (createItem, _ref) {
@@ -173,14 +182,14 @@ function (_Component) {
               }(),
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 55
+                lineNumber: 65
               },
               __self: this
             }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_ErrorMessage__WEBPACK_IMPORTED_MODULE_7__["default"], {
               error: error,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 68
+                lineNumber: 78
               },
               __self: this
             }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("fieldset", {
@@ -188,14 +197,33 @@ function (_Component) {
               "aria-busy": loading,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 69
+                lineNumber: 79
               },
               __self: this
             }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
+              htmlFor: "file",
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 80
+              },
+              __self: this
+            }, "Image", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+              type: "file",
+              id: "file",
+              name: "file",
+              placeholder: "Upload an image",
+              required: true,
+              onChange: _this2.uploadFile,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 82
+              },
+              __self: this
+            })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
               htmlFor: "title",
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 70
+                lineNumber: 92
               },
               __self: this
             }, "Title", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
@@ -208,14 +236,14 @@ function (_Component) {
               onChange: _this2.handleChange,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 72
+                lineNumber: 94
               },
               __self: this
             })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
               htmlFor: "price",
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 83
+                lineNumber: 105
               },
               __self: this
             }, "Price", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
@@ -228,14 +256,14 @@ function (_Component) {
               onChange: _this2.handleChange,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 85
+                lineNumber: 107
               },
               __self: this
             })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
               htmlFor: "description",
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 96
+                lineNumber: 118
               },
               __self: this
             }, "Description", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("textarea", {
@@ -247,14 +275,14 @@ function (_Component) {
               onChange: _this2.handleChange,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 98
+                lineNumber: 120
               },
               __self: this
             })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
               type: "submit",
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 107
+                lineNumber: 129
               },
               __self: this
             }, "Submit")))
