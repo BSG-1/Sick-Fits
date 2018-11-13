@@ -47,15 +47,27 @@ class CreateItem extends Component {
     }
 
     //uploadfile pics
-    async uploadFile = e => {
+    uploadFile = async e => {
         console.log('uploading file...');
         const files = e.target.files;
         const data = new FormData();
         data.append('file', files[0]);
         //upload preset needed for cloudinary -> tells it name to go look for 
         data.append('upload_preset', 'sickfits');
+
         //hit the cloudinary API
-    };;
+        const res = await fetch('https://api.cloudinary.com/v1_1/bgimg/image/upload', {
+            method: 'POST',
+            body: data
+        });
+        //parse the data that comes bcak
+        const file = await res.json();
+        console.log(file);
+        this.setState({
+            image: file.secure_url,
+            largeImage: file.eager[0].secure_url
+        })
+    };
 
     render() {
         return (
