@@ -8,10 +8,10 @@ import formatMoney from '../lib/formatMoney';
 class CreateItem extends Component {
     state = {
         title: 'Cool Shoes',
-        description: '',
-        image: '',
-        largeImage: '',
-        price: 0,
+        description: 'I love those',
+        image: 'dog.jpg',
+        largeImage: 'largeDog.jpg',
+        price: 1000,
     };
 
     //wouldnt be able to bind a regular function
@@ -24,12 +24,11 @@ class CreateItem extends Component {
 
     render() {
         return (
-            <Form
-                onsubmit={(e) => {
-                    //stops form from actually submitting; will stop url weirdness
-                    e.preventDefault();
-                    console.log(this.state);
-                }}
+            <Form onSubmit={(e) => {
+                //stops form from actually submitting; will stop url weirdness
+                e.preventDefault();
+                console.log(this.state);
+            }}
             >
                 <fieldset>
                     <label htmlFor="title">
