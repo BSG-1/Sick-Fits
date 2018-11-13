@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 //allows us to push data and actually make a change
 import { Mutation } from 'react-apollo';
 import gql from 'graphql-tag';
+import Router from 'next/router';
 import Form from './styles/Form';
 import formatMoney from '../lib/formatMoney';
+import Error from './ErrorMessage';
 
 //writing the query for the mutation that captures the data and sends it to server
 const CREATE_ITEM_MUTATION = gql`
@@ -30,7 +32,7 @@ const CREATE_ITEM_MUTATION = gql`
 class CreateItem extends Component {
     state = {
         title: 'Cool Shoes',
-        description: 'I love those',
+        description: 'I love those shoes',
         image: 'dog.jpg',
         largeImage: 'largeDog.jpg',
         price: 1000,
@@ -50,13 +52,21 @@ class CreateItem extends Component {
             <Mutation mutation={CREATE_ITEM_MUTATION} variables={this.state}>
                 {(createItem, { loading, error }) => (
                     //want to return everything from form implicitly (returns whatever is there without having to use the return keyword ==== closing for function and mutation tag moved to end of form!!!)                     
-                    <Form onSubmit={(e) => {
+                    <Form onSubmit={async e => {
                         //stops form from actually submitting; will stop url weirdness
                         e.preventDefault();
-                        console.log(this.state);
+                        //call the mutation; await the exposed createItem function from backend
+                        const res = await createItem();
+                        //change them to the single item page
+                        console.log(res);
+                        Router.push({
+                            pathname: '/item',
+                            query: { id: res.data.createItem.id }
+                        })
                     }}
                     >
-                        <fieldset>
+                        <Error error={error} />
+                        <fieldset disabled={loading} aria-busy={loading}>
                             <label htmlFor="title">
                                 Title
                         <input
