@@ -33,7 +33,7 @@ const ItemsList = styled.div`
 `;
 
 //this is a component for fetching the items from graphql/prisma and looping over them, and also for formatting them (above)
-export default class Items extends Component {
+class Items extends Component {
     render() {
         return (
             <Center>
@@ -53,3 +53,6 @@ export default class Items extends Component {
         );
     }
 }
+
+export default Items;
+export { ALL_ITEMS_QUERY };

@@ -5,6 +5,28 @@ import gql from 'graphql-tag';
 import Form from './styles/Form';
 import formatMoney from '../lib/formatMoney';
 
+//writing the query for the mutation that captures the data and sends it to server
+const CREATE_ITEM_MUTATION = gql`
+    # this mutation takes arguments, which will then be able to gather the input data and hold it in the query (createItem), which was specified from our backend in schema.graphql
+    mutation CREATE_ITEM_MUTATION(
+        $title: String!
+        $description: String!
+        $price: Int!
+        $image: String
+        $largeImage: String
+    ) {
+        createItem(
+            title: $title
+            description: $description
+            price: $price
+            image: $image
+            largeImage: $largeImage
+        ) {
+            id
+        }
+    } 
+`;
+
 class CreateItem extends Component {
     state = {
         title: 'Cool Shoes',
@@ -24,55 +46,63 @@ class CreateItem extends Component {
 
     render() {
         return (
-            <Form onSubmit={(e) => {
-                //stops form from actually submitting; will stop url weirdness
-                e.preventDefault();
-                console.log(this.state);
-            }}
-            >
-                <fieldset>
-                    <label htmlFor="title">
-                        Title
+            // Mutation wraps the entire form tag, exposing data to the query
+            <Mutation mutation={CREATE_ITEM_MUTATION} variables={this.state}>
+                {(createItem, { loading, error }) => (
+                    //want to return everything from form implicitly (returns whatever is there without having to use the return keyword ==== closing for function and mutation tag moved to end of form!!!)                     
+                    <Form onSubmit={(e) => {
+                        //stops form from actually submitting; will stop url weirdness
+                        e.preventDefault();
+                        console.log(this.state);
+                    }}
+                    >
+                        <fieldset>
+                            <label htmlFor="title">
+                                Title
                         <input
-                            type="text"
-                            id="title"
-                            name="title"
-                            placeholder="Title"
-                            required
-                            value={this.state.title}
-                            onChange={this.handleChange}
-                        />
-                    </label>
+                                    type="text"
+                                    id="title"
+                                    name="title"
+                                    placeholder="Title"
+                                    required
+                                    value={this.state.title}
+                                    onChange={this.handleChange}
+                                />
+                            </label>
 
-                    <label htmlFor="price">
-                        Price
+                            <label htmlFor="price">
+                                Price
                         <input
-                            type="number"
-                            id="price"
-                            name="price"
-                            placeholder="Price"
-                            required
-                            value={this.state.price}
-                            onChange={this.handleChange}
-                        />
-                    </label>
+                                    type="number"
+                                    id="price"
+                                    name="price"
+                                    placeholder="Price"
+                                    required
+                                    value={this.state.price}
+                                    onChange={this.handleChange}
+                                />
+                            </label>
 
-                    <label htmlFor="description">
-                        Description
+                            <label htmlFor="description">
+                                Description
                         <textarea
-                            id="description"
-                            name="description"
-                            placeholder="Enter A Description"
-                            required
-                            value={this.state.description}
-                            onChange={this.handleChange}
-                        />
-                    </label>
-                    <button type="submit">Submit</button>
-                </fieldset>
-            </Form>
+                                    id="description"
+                                    name="description"
+                                    placeholder="Enter A Description"
+                                    required
+                                    value={this.state.description}
+                                    onChange={this.handleChange}
+                                />
+                            </label>
+                            <button type="submit">Submit</button>
+                        </fieldset>
+                    </Form>
+                )}
+            </Mutation>
         );
     }
 }
 
 export default CreateItem;
+//named export using ES6
+export { CREATE_ITEM_MUTATION };
