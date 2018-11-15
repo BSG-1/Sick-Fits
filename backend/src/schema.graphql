@@ -3,7 +3,11 @@
 
 # import * from './generated/prisma.graphql' 
 type Mutation {
+    # creating an item
     createItem(title: String, description: String, price: Int, image: String, largeImage: String): Item!
+    
+    # updating an item
+    updateItem(id: ID!, title: String, description: String, price: Int): Item!
 }
 
 type Query {
