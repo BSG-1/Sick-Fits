@@ -207,150 +207,171 @@ function (_Component) {
     value: function render() {
       var _this2 = this;
 
-      return (// Mutation wraps the entire form tag, exposing data to the query
-        react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_apollo__WEBPACK_IMPORTED_MODULE_2__["Mutation"], {
-          mutation: UPDATE_ITEM_MUTATION,
-          variables: this.state,
+      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_apollo__WEBPACK_IMPORTED_MODULE_2__["Query"], {
+        query: SINGLE_ITEM_QUERY,
+        variables: {
+          id: this.props.id
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 56
+        },
+        __self: this
+      }, function (_ref) {
+        var data = _ref.data,
+            loading = _ref.loading;
+        if (loading) return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 57
+            lineNumber: 63
           },
           __self: this
-        }, function (createItem, _ref) {
-          var loading = _ref.loading,
-              error = _ref.error;
-          return (//want to return everything from form implicitly (returns whatever is there without having to use the return keyword ==== closing for function and mutation tag moved to end of form!!!)                     
-            react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles_Form__WEBPACK_IMPORTED_MODULE_5__["default"], {
-              onSubmit:
-              /*#__PURE__*/
-              function () {
-                var _ref2 = _asyncToGenerator(
+        }, "Loading...");
+        return (// Mutation wraps the entire form tag, exposing data to the query
+          react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_apollo__WEBPACK_IMPORTED_MODULE_2__["Mutation"], {
+            mutation: UPDATE_ITEM_MUTATION,
+            variables: _this2.state,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 66
+            },
+            __self: this
+          }, function (createItem, _ref2) {
+            var loading = _ref2.loading,
+                error = _ref2.error;
+            return (//want to return everything from form implicitly (returns whatever is there without having to use the return keyword ==== closing for function and mutation tag moved to end of form!!!)                     
+              react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles_Form__WEBPACK_IMPORTED_MODULE_5__["default"], {
+                onSubmit:
                 /*#__PURE__*/
-                _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(e) {
-                  var res;
-                  return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
-                    while (1) {
-                      switch (_context.prev = _context.next) {
-                        case 0:
-                          //stops form from actually submitting; will stop url weirdness
-                          e.preventDefault(); //call the mutation; await the exposed createItem function from backend
+                function () {
+                  var _ref3 = _asyncToGenerator(
+                  /*#__PURE__*/
+                  _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(e) {
+                    var res;
+                    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+                      while (1) {
+                        switch (_context.prev = _context.next) {
+                          case 0:
+                            //stops form from actually submitting; will stop url weirdness
+                            e.preventDefault(); //call the mutation; await the exposed createItem function from backend
 
-                          _context.next = 3;
-                          return createItem();
+                            _context.next = 3;
+                            return createItem();
 
-                        case 3:
-                          res = _context.sent;
-                          //change them to the single item page
-                          console.log(res);
-                          next_router__WEBPACK_IMPORTED_MODULE_4___default.a.push({
-                            pathname: '/item',
-                            query: {
-                              id: res.data.createItem.id
-                            }
-                          });
+                          case 3:
+                            res = _context.sent;
+                            //change them to the single item page
+                            console.log(res);
+                            next_router__WEBPACK_IMPORTED_MODULE_4___default.a.push({
+                              pathname: '/item',
+                              query: {
+                                id: res.data.createItem.id
+                              }
+                            });
 
-                        case 6:
-                        case "end":
-                          return _context.stop();
+                          case 6:
+                          case "end":
+                            return _context.stop();
+                        }
                       }
-                    }
-                  }, _callee, this);
-                }));
+                    }, _callee, this);
+                  }));
 
-                return function (_x) {
-                  return _ref2.apply(this, arguments);
-                };
-              }(),
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 60
-              },
-              __self: this
-            }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_ErrorMessage__WEBPACK_IMPORTED_MODULE_7__["default"], {
-              error: error,
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 73
-              },
-              __self: this
-            }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("fieldset", {
-              disabled: loading,
-              "aria-busy": loading,
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 74
-              },
-              __self: this
-            }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-              htmlFor: "title",
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 75
-              },
-              __self: this
-            }, "Title", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
-              type: "text",
-              id: "title",
-              name: "title",
-              placeholder: "Title",
-              required: true,
-              value: _this2.state.title,
-              onChange: _this2.handleChange,
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 77
-              },
-              __self: this
-            })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-              htmlFor: "price",
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 88
-              },
-              __self: this
-            }, "Price", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
-              type: "number",
-              id: "price",
-              name: "price",
-              placeholder: "Price",
-              required: true,
-              value: _this2.state.price,
-              onChange: _this2.handleChange,
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 90
-              },
-              __self: this
-            })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-              htmlFor: "description",
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 101
-              },
-              __self: this
-            }, "Description", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("textarea", {
-              id: "description",
-              name: "description",
-              placeholder: "Enter A Description",
-              required: true,
-              value: _this2.state.description,
-              onChange: _this2.handleChange,
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 103
-              },
-              __self: this
-            })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
-              type: "submit",
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 112
-              },
-              __self: this
-            }, "Submit")))
-          );
-        })
-      );
+                  return function (_x) {
+                    return _ref3.apply(this, arguments);
+                  };
+                }(),
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 69
+                },
+                __self: this
+              }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_ErrorMessage__WEBPACK_IMPORTED_MODULE_7__["default"], {
+                error: error,
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 82
+                },
+                __self: this
+              }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("fieldset", {
+                disabled: loading,
+                "aria-busy": loading,
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 83
+                },
+                __self: this
+              }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
+                htmlFor: "title",
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 84
+                },
+                __self: this
+              }, "Title", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+                type: "text",
+                id: "title",
+                name: "title",
+                placeholder: "Title",
+                required: true,
+                defaultValue: data.item.title,
+                onChange: _this2.handleChange,
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 86
+                },
+                __self: this
+              })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
+                htmlFor: "price",
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 97
+                },
+                __self: this
+              }, "Price", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+                type: "number",
+                id: "price",
+                name: "price",
+                placeholder: "Price",
+                required: true,
+                defaultValue: data.item.price,
+                onChange: _this2.handleChange,
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 99
+                },
+                __self: this
+              })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
+                htmlFor: "description",
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 110
+                },
+                __self: this
+              }, "Description", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("textarea", {
+                id: "description",
+                name: "description",
+                placeholder: "Enter A Description",
+                required: true,
+                defaultValue: data.item.description,
+                onChange: _this2.handleChange,
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 112
+                },
+                __self: this
+              })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+                type: "submit",
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 121
+                },
+                __self: this
+              }, "Save Changes")))
+            );
+          })
+        );
+      });
     }
   }]);
 

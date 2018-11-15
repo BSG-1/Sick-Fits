@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 //allows us to push data and actually make a change
-import { Mutation } from 'react-apollo';
+import { Mutation, Query } from 'react-apollo';
 import gql from 'graphql-tag';
 import Router from 'next/router';
 import Form from './styles/Form';
@@ -53,67 +53,79 @@ class UpdateItem extends Component {
 
     render() {
         return (
-            // Mutation wraps the entire form tag, exposing data to the query
-            <Mutation mutation={UPDATE_ITEM_MUTATION} variables={this.state}>
-                {(createItem, { loading, error }) => (
-                    //want to return everything from form implicitly (returns whatever is there without having to use the return keyword ==== closing for function and mutation tag moved to end of form!!!)                     
-                    <Form onSubmit={async e => {
-                        //stops form from actually submitting; will stop url weirdness
-                        e.preventDefault();
-                        //call the mutation; await the exposed createItem function from backend
-                        const res = await createItem();
-                        //change them to the single item page
-                        console.log(res);
-                        Router.push({
-                            pathname: '/item',
-                            query: { id: res.data.createItem.id }
-                        })
-                    }}
-                    >
-                        <Error error={error} />
-                        <fieldset disabled={loading} aria-busy={loading}>
-                            <label htmlFor="title">
-                                Title
+            <Query
+                query={SINGLE_ITEM_QUERY}
+                variables={{
+                    id: this.props.id,
+                }}
+            >
+                {({ data, loading }) => {
+                    if (loading) return <p>Loading...</p>
+                    return (
+                        // Mutation wraps the entire form tag, exposing data to the query
+                        <Mutation mutation={UPDATE_ITEM_MUTATION} variables={this.state}>
+                            {(createItem, { loading, error }) => (
+                                //want to return everything from form implicitly (returns whatever is there without having to use the return keyword ==== closing for function and mutation tag moved to end of form!!!)                     
+                                <Form onSubmit={async e => {
+                                    //stops form from actually submitting; will stop url weirdness
+                                    e.preventDefault();
+                                    //call the mutation; await the exposed createItem function from backend
+                                    const res = await createItem();
+                                    //change them to the single item page
+                                    console.log(res);
+                                    Router.push({
+                                        pathname: '/item',
+                                        query: { id: res.data.createItem.id }
+                                    })
+                                }}
+                                >
+                                    <Error error={error} />
+                                    <fieldset disabled={loading} aria-busy={loading}>
+                                        <label htmlFor="title">
+                                            Title
                                 <input
-                                    type="text"
-                                    id="title"
-                                    name="title"
-                                    placeholder="Title"
-                                    required
-                                    value={this.state.title}
-                                    onChange={this.handleChange}
-                                />
-                            </label>
+                                                type="text"
+                                                id="title"
+                                                name="title"
+                                                placeholder="Title"
+                                                required
+                                                defaultValue={data.item.title}
+                                                onChange={this.handleChange}
+                                            />
+                                        </label>
 
-                            <label htmlFor="price">
-                                Price
+                                        <label htmlFor="price">
+                                            Price
                                 <input
-                                    type="number"
-                                    id="price"
-                                    name="price"
-                                    placeholder="Price"
-                                    required
-                                    value={this.state.price}
-                                    onChange={this.handleChange}
-                                />
-                            </label>
+                                                type="number"
+                                                id="price"
+                                                name="price"
+                                                placeholder="Price"
+                                                required
+                                                defaultValue={data.item.price}
+                                                onChange={this.handleChange}
+                                            />
+                                        </label>
 
-                            <label htmlFor="description">
-                                Description
+                                        <label htmlFor="description">
+                                            Description
                                 <textarea
-                                    id="description"
-                                    name="description"
-                                    placeholder="Enter A Description"
-                                    required
-                                    value={this.state.description}
-                                    onChange={this.handleChange}
-                                />
-                            </label>
-                            <button type="submit">Submit</button>
-                        </fieldset>
-                    </Form>
-                )}
-            </Mutation>
+                                                id="description"
+                                                name="description"
+                                                placeholder="Enter A Description"
+                                                required
+                                                defaultValue={data.item.description}
+                                                onChange={this.handleChange}
+                                            />
+                                        </label>
+                                        <button type="submit">Save Changes</button>
+                                    </fieldset>
+                                </Form>
+                            )}
+                        </Mutation>
+                    );
+                }}
+            </Query>
         );
     }
 }
