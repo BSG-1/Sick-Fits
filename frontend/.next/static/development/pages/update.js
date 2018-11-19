@@ -95,27 +95,20 @@ DisplayError.propTypes = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UPDATE_ITEM_MUTATION", function() { return UPDATE_ITEM_MUTATION; });
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_apollo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-apollo */ "./node_modules/react-apollo/react-apollo.browser.umd.js");
-/* harmony import */ var react_apollo__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_apollo__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! graphql-tag */ "./node_modules/graphql-tag/src/index.js");
-/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(graphql_tag__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/router */ "./node_modules/next/router.js");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _styles_Form__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./styles/Form */ "./components/styles/Form.js");
-/* harmony import */ var _lib_formatMoney__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../lib/formatMoney */ "./lib/formatMoney.js");
-/* harmony import */ var _ErrorMessage__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./ErrorMessage */ "./components/ErrorMessage.js");
-
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_apollo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-apollo */ "./node_modules/react-apollo/react-apollo.browser.umd.js");
+/* harmony import */ var react_apollo__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_apollo__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! graphql-tag */ "./node_modules/graphql-tag/src/index.js");
+/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(graphql_tag__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/router */ "./node_modules/next/router.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _styles_Form__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./styles/Form */ "./components/styles/Form.js");
+/* harmony import */ var _lib_formatMoney__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../lib/formatMoney */ "./lib/formatMoney.js");
+/* harmony import */ var _ErrorMessage__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./ErrorMessage */ "./components/ErrorMessage.js");
 var _jsxFileName = "/Users/cssb-ghataorhe/Desktop/Bahadur/GHRepos/Sick-Fits/frontend/components/UpdateItem.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -136,7 +129,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n    # this mutation takes arguments, which will then be able to gather the input data and hold it in the query (createItem), which was specified from our backend in schema.graphql\n    mutation UPDATE_ITEM_MUTATION(\n        $title: String!\n        $description: String!\n        $price: Int!\n        $image: String\n        $largeImage: String\n    ) {\n        createItem(\n            title: $title\n            description: $description\n            price: $price\n            image: $image\n            largeImage: $largeImage\n        ) {\n            id\n        }\n    } \n"]);
+  var data = _taggedTemplateLiteral(["\n    # this mutation takes arguments, which will then be able to gather the input data and hold it in the query (createItem), which was specified from our backend in schema.graphql\n    mutation UPDATE_ITEM_MUTATION(\n        $title: String!\n        $description: String!\n        $price: Int!\n    ) {\n        createItem(\n            title: $title\n            description: $description\n            price: $price\n        ) {\n            id\n            title\n            description\n            price\n        }\n    } \n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -166,8 +159,8 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
  //writing the queries for the mutations that capture the data and sends it to server
 
-var SINGLE_ITEM_QUERY = graphql_tag__WEBPACK_IMPORTED_MODULE_3___default()(_templateObject());
-var UPDATE_ITEM_MUTATION = graphql_tag__WEBPACK_IMPORTED_MODULE_3___default()(_templateObject2());
+var SINGLE_ITEM_QUERY = graphql_tag__WEBPACK_IMPORTED_MODULE_2___default()(_templateObject());
+var UPDATE_ITEM_MUTATION = graphql_tag__WEBPACK_IMPORTED_MODULE_2___default()(_templateObject2()); //Update Item
 
 var UpdateItem =
 /*#__PURE__*/
@@ -199,6 +192,12 @@ function (_Component) {
       _this.setState(_defineProperty({}, name, val));
     });
 
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "updateItem", function (e, updateItemMutation) {
+      e.preventDefault();
+      console.log('Updating Item!!');
+      console.log(_this.state);
+    });
+
     return _this;
   }
 
@@ -207,108 +206,71 @@ function (_Component) {
     value: function render() {
       var _this2 = this;
 
-      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_apollo__WEBPACK_IMPORTED_MODULE_2__["Query"], {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_apollo__WEBPACK_IMPORTED_MODULE_1__["Query"], {
         query: SINGLE_ITEM_QUERY,
         variables: {
           id: this.props.id
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 56
+          lineNumber: 61
         },
         __self: this
       }, function (_ref) {
         var data = _ref.data,
             loading = _ref.loading;
-        if (loading) return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
+        if (loading) return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 63
+            lineNumber: 68
           },
           __self: this
         }, "Loading...");
         return (// Mutation wraps the entire form tag, exposing data to the query
-          react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_apollo__WEBPACK_IMPORTED_MODULE_2__["Mutation"], {
+          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_apollo__WEBPACK_IMPORTED_MODULE_1__["Mutation"], {
             mutation: UPDATE_ITEM_MUTATION,
             variables: _this2.state,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 66
+              lineNumber: 71
             },
             __self: this
-          }, function (createItem, _ref2) {
+          }, function (updateItem, _ref2) {
             var loading = _ref2.loading,
                 error = _ref2.error;
             return (//want to return everything from form implicitly (returns whatever is there without having to use the return keyword ==== closing for function and mutation tag moved to end of form!!!)                     
-              react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles_Form__WEBPACK_IMPORTED_MODULE_5__["default"], {
-                onSubmit:
-                /*#__PURE__*/
-                function () {
-                  var _ref3 = _asyncToGenerator(
-                  /*#__PURE__*/
-                  _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(e) {
-                    var res;
-                    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
-                      while (1) {
-                        switch (_context.prev = _context.next) {
-                          case 0:
-                            //stops form from actually submitting; will stop url weirdness
-                            e.preventDefault(); //call the mutation; await the exposed createItem function from backend
-
-                            _context.next = 3;
-                            return createItem();
-
-                          case 3:
-                            res = _context.sent;
-                            //change them to the single item page
-                            console.log(res);
-                            next_router__WEBPACK_IMPORTED_MODULE_4___default.a.push({
-                              pathname: '/item',
-                              query: {
-                                id: res.data.createItem.id
-                              }
-                            });
-
-                          case 6:
-                          case "end":
-                            return _context.stop();
-                        }
-                      }
-                    }, _callee, this);
-                  }));
-
-                  return function (_x) {
-                    return _ref3.apply(this, arguments);
-                  };
-                }(),
+              react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_Form__WEBPACK_IMPORTED_MODULE_4__["default"], {
+                onSubmit: function onSubmit(e) {
+                  return _this2.updateItem(e, updateItem);
+                },
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 69
+                  lineNumber: 74
                 },
                 __self: this
-              }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_ErrorMessage__WEBPACK_IMPORTED_MODULE_7__["default"], {
+              }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ErrorMessage__WEBPACK_IMPORTED_MODULE_6__["default"], {
                 error: error,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 82
+                  lineNumber: 75
                 },
                 __self: this
-              }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("fieldset", {
+              }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("fieldset", {
                 disabled: loading,
                 "aria-busy": loading,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 83
+                  lineNumber: 76
                 },
                 __self: this
-              }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
+              }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
                 htmlFor: "title",
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 84
+                  lineNumber: 77
                 },
                 __self: this
-              }, "Title", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+              }, "Title", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
                 type: "text",
                 id: "title",
                 name: "title",
@@ -318,17 +280,17 @@ function (_Component) {
                 onChange: _this2.handleChange,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 86
+                  lineNumber: 79
                 },
                 __self: this
-              })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
+              })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
                 htmlFor: "price",
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 97
+                  lineNumber: 90
                 },
                 __self: this
-              }, "Price", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+              }, "Price", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
                 type: "number",
                 id: "price",
                 name: "price",
@@ -338,17 +300,17 @@ function (_Component) {
                 onChange: _this2.handleChange,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 99
+                  lineNumber: 92
                 },
                 __self: this
-              })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
+              })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
                 htmlFor: "description",
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 110
+                  lineNumber: 103
                 },
                 __self: this
-              }, "Description", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("textarea", {
+              }, "Description", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
                 id: "description",
                 name: "description",
                 placeholder: "Enter A Description",
@@ -357,14 +319,14 @@ function (_Component) {
                 onChange: _this2.handleChange,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 112
+                  lineNumber: 105
                 },
                 __self: this
-              })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+              })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
                 type: "submit",
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 121
+                  lineNumber: 114
                 },
                 __self: this
               }, "Save Changes")))
@@ -376,7 +338,7 @@ function (_Component) {
   }]);
 
   return UpdateItem;
-}(react__WEBPACK_IMPORTED_MODULE_1__["Component"]);
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (UpdateItem); //named export using ES6
 
@@ -1114,18 +1076,6 @@ module.exports = _typeof;
 /*!******************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/regenerator/index.js ***!
   \******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! regenerator-runtime */ "./node_modules/regenerator-runtime/runtime-module.js");
-
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime/regenerator/index.js":
-/*!**********************************************************!*\
-  !*** ./node_modules/@babel/runtime/regenerator/index.js ***!
-  \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -29012,7 +28962,7 @@ var Sell = function Sell(props) {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!*******************************!*\
   !*** multi ./pages/update.js ***!
   \*******************************/
@@ -29037,5 +28987,5 @@ module.exports = dll_5d62d38be3592dca3a42;
 
 /***/ })
 
-},[[4,"static/runtime/webpack.js"]]]));;
+},[[3,"static/runtime/webpack.js"]]]));;
 //# sourceMappingURL=update.js.map

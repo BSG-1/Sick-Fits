@@ -25,21 +25,21 @@ const UPDATE_ITEM_MUTATION = gql`
         $title: String!
         $description: String!
         $price: Int!
-        $image: String
-        $largeImage: String
     ) {
         createItem(
             title: $title
             description: $description
             price: $price
-            image: $image
-            largeImage: $largeImage
         ) {
             id
+            title
+            description
+            price
         }
     } 
 `;
 
+//Update Item
 class UpdateItem extends Component {
     state = {};
 
@@ -49,6 +49,11 @@ class UpdateItem extends Component {
         const val = type === 'number' ? parseFloat(value) : value;
         //works for ANY input
         this.setState({ [name]: val });
+    };
+    updateItem = (e, updateItemMutation) => {
+        e.preventDefault();
+        console.log('Updating Item!!');
+        console.log(this.state);
     };
 
     render() {
@@ -64,21 +69,9 @@ class UpdateItem extends Component {
                     return (
                         // Mutation wraps the entire form tag, exposing data to the query
                         <Mutation mutation={UPDATE_ITEM_MUTATION} variables={this.state}>
-                            {(createItem, { loading, error }) => (
+                            {(updateItem, { loading, error }) => (
                                 //want to return everything from form implicitly (returns whatever is there without having to use the return keyword ==== closing for function and mutation tag moved to end of form!!!)                     
-                                <Form onSubmit={async e => {
-                                    //stops form from actually submitting; will stop url weirdness
-                                    e.preventDefault();
-                                    //call the mutation; await the exposed createItem function from backend
-                                    const res = await createItem();
-                                    //change them to the single item page
-                                    console.log(res);
-                                    Router.push({
-                                        pathname: '/item',
-                                        query: { id: res.data.createItem.id }
-                                    })
-                                }}
-                                >
+                                <Form onSubmit={e => this.updateItem(e, updateItem)}>
                                     <Error error={error} />
                                     <fieldset disabled={loading} aria-busy={loading}>
                                         <label htmlFor="title">
